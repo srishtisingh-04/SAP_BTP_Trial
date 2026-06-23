@@ -1,0 +1,103 @@
+user: SAP_BTP_Trial $ git init
+Reinitialized existing Git repository in /home/user/projects/SAP_BTP_Trial/.git/
+
+user: SAP_BTP_Trial $ git add .
+
+user: SAP_BTP_Trial $ git status     
+On branch main
+No commits yet
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   app.js
+
+user: SAP_BTP_Trial $ git commit -m 'Adding new file app.js'
+[main (root-commit) d325707] Adding new file app.js
+ 1 file changed, 1 insertion(+)
+ create mode 100644 app.js
+
+user: SAP_BTP_Trial $ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 261 bytes | 261.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/srishtisingh-04/SAP_BTP_Trial.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+user: SAP_BTP_Trial $ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+
+user: SAP_BTP_Trial $ git log
+commit d325707340c5600f456c813529af06a34c1c29a5 (HEAD -> main, origin/main)
+Author: Srishti Singh <srishti.singh03@sap.com>
+Date:   Mon Jun 22 07:57:09 2026 +0000
+    Adding new file app.js
+
+user: SAP_BTP_Trial $ git branch feature-login
+
+user: SAP_BTP_Trial $ git checkout feature-login
+Switched to branch 'feature-login'
+
+user: SAP_BTP_Trial $ git branch
+* feature-login
+  main
+
+user: SAP_BTP_Trial $ git diff
+diff --git a/app.js b/app.js
+index f0c5b0c..d96037d 100644
+--- a/app.js
++++ b/app.js
+@@ -1 +1,3 @@
+-console.log("Welcome to CAP training");
+\ No newline at end of file
++console.log("Welcome to CAP training");
++
++console.log("New file added - login.js");
+\ No newline at end of file
+
+user: SAP_BTP_Trial $ git add .
+
+user: SAP_BTP_Trial $ git diff
+
+user: SAP_BTP_Trial $ git commit -m 'Added login file'                        
+[feature-login 41632a7] Added login file
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+ create mode 100644 login.js
+
+user: SAP_BTP_Trial $ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+user: SAP_BTP_Trial $ git merge feature-login
+Updating d325707..41632a7
+Fast-forward
+ app.js   | 4 +++-
+ login.js | 5 +++++
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+ create mode 100644 login.js
+
+user: SAP_BTP_Trial $ git log --oneline
+41632a7 (HEAD -> main, feature-login) Added login file
+d325707 (origin/main) Adding new file app.js
+
+user: SAP_BTP_Trial $ git remote add origin https://github.com/srishtisingh-04/SAP_BTP_Trial.git
+error: remote origin already exists.
+
+user: SAP_BTP_Trial $ git push -u origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 425 bytes | 425.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/srishtisingh-04/SAP_BTP_Trial.git
+   d325707..41632a7  main -> main
+branch 'main' set up to track 'origin/main'.
+
+user: SAP_BTP_Trial $ git remote -v
+origin  https://github.com/srishtisingh-04/SAP_BTP_Trial.git (fetch)
+origin  https://github.com/srishtisingh-04/SAP_BTP_Trial.git (push)
+
+user: SAP_BTP_Trial $ 
